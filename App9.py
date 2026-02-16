@@ -31,14 +31,14 @@ def mostrar_cabecera():
     col1, col2 = st.columns([1, 6])
     with col1:
         try:
-            st.image(r"C:\Users\varios\Desktop\Ciencia de Datos\StreamLit\Clase 2\C02_logo_empresa.jpg", width=120)
+            st.image("C02_logo_empresa.jpg", width=120)
         except:
             st.info("Logo Empresa")
     with col2:
         st.markdown("<div class='header-text'>Aplicación de Encuesta</div>", unsafe_allow_html=True)
 
 # --- FUNCIONES DE DATOS ---
-FILE_PATH = r"C:\Users\varios\Desktop\Ciencia de Datos\StreamLit\Clase 3\C03_Encuesta.csv"
+FILE_PATH = "C03_Encuesta.csv"
 
 def load_data():
     if os.path.exists(FILE_PATH):
@@ -139,4 +139,5 @@ elif menu == "Analisis":
         fig_sun = px.sunburst(df, path=['PREG1', 'PREG4', 'PREG3'], values='PREG2')
         st.plotly_chart(fig_sun, use_container_width=True)
     else:
+
         st.warning("No hay datos para analizar.")
